@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <tables-animals></tables-animals>
+    </div>
     @vite('resources/js/app.js')
 </body>
 
