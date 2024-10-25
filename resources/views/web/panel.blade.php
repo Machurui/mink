@@ -10,7 +10,7 @@
 
 <body>
     <div id="app">
-        <tables-animals></tables-animals>
+        <panel-admin></panel-admin>
     </div>
     @vite('resources/js/app.js')
 </body>
