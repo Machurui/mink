@@ -249,9 +249,20 @@ export default {
         };
 
         // Fonction pour rediriger vers la page de déconnexion
+        const redirectToLogout = async () => {
+            try {
+                // Envoie une requête POST à l'API pour se déconnecter
+                const response = await axios.post('/logout');
 
-        // A FAIRE
-        const redirectToLogout = () => window.location.href = '/logout';
+                // Vérifie si la déconnexion est réussie
+                if (response.status === 200) {
+                    // Redirige vers la page de connexion si la déconnexion est réussie
+                    window.location.href = '/signin';
+                }
+            } catch (error) {
+                errorMessage.value = 'La déconnexion ne s\'est pas bien passé.Veuillez réessayer.';
+            }
+        };
 
         // Fonction pour gérer la sélection de tous les animaux
         const isAllSelected = computed(() => selectedRows.value.length === tableRow.value.length);

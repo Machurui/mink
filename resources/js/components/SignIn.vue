@@ -47,17 +47,21 @@ const password = ref('');
 const passwordShown = ref(false);
 const errorMessage = ref('');
 
+// Fonction pour afficher ou masquer le mot de passe
 const togglePasswordVisibility = () => {
     passwordShown.value = !passwordShown.value;
 };
 
+// Fonction pour gérer la connexion
 const handleSignIn = async () => {
     try {
+        // Envoie une requête POST à l'API pour se connecter
         const response = await axios.post('/login', {
             email: email.value,
             password: password.value,
         });
 
+        // Vérifie si la connexion est réussie
         if (response.status === 200) {
             // Redirige vers le web panel si la connexion est réussie
             window.location.href = '/panel';
