@@ -20,8 +20,9 @@ class Animal extends Model
         'species',
         'breed',
         'description',
+        'status',
         'price',
-        'image',
+        'images',
     ];
 
     /**
@@ -32,6 +33,17 @@ class Animal extends Model
     protected $casts = [
         'price' => 'float',
         'age' => 'integer',
+        'images' => 'array',
     ];
-}
 
+    /**
+     * Scope pour récupérer uniquement les animaux disponibles
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAvailable($query)
+    {
+        return $query->where('status', 'disponible');
+    }
+}

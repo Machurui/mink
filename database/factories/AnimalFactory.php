@@ -27,9 +27,9 @@ class AnimalFactory extends Factory
             'species' => $this->faker->randomElement(['chien', 'chat', 'loup', 'hamster']), // Espèce aléatoire
             'breed' => $this->faker->word(), // Race aléatoire
             'description' => $this->faker->sentence(), // Description fictive
+            'status' => $this->faker->randomElement(['disponible', 'réservé', 'vendu']), // Statut aléatoire
             'price' => $this->faker->randomFloat(2, 50, 1000), // Prix aléatoire entre 50 et 1000
-            'image' => $this->faker->imageUrl(640, 480, 'animals', true), // URL d'image fictive
+            'images' => $this->faker->imageUrl(640, 480, 'animals', true), // URL d'image fictive
         ];
     }
 }
-

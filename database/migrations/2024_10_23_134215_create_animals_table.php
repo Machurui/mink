@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('species'); // Espèce de l'animal (ex : chien, chat)
             $table->string('breed'); // Espèce de l'animal (ex : chien, chat)
             $table->text('description')->nullable(); // Description de l'animal
+            $table->string('status')->default('available'); // Statut de l'animal (disponible, réservé, vendu)
             $table->float('price')->nullable(); // Prix de l'animal HT
-            $table->string('image')->nullable(); // Chemin de l'image de l'animal
+            $table->text('images')->nullable(); // Chemin de l'image de l'animal
             $table->timestamps(); // Colonnes created_at et updated_at
         });
     }
