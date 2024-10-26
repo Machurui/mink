@@ -11,10 +11,16 @@
                             Liste des animaux disponibles
                         </small>
                     </div>
-                    <button @click="redirectToLogout"
-                        class="bg-gradient-to-tr from-gray-900 to-gray-800 text-white font-semibold py-2 px-5 rounded-md text-sm shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300">
-                        Logout
-                    </button>
+                    <div>
+                        <button @click="redirectToHome"
+                            class="bg-gradient-to-tr from-gray-900 to-gray-800 mx-2 text-white font-semibold py-2 px-5 rounded-md text-sm shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300">
+                            Accueil
+                        </button>
+                        <button @click="redirectToLogout"
+                            class="bg-gradient-to-tr from-gray-900 to-gray-800 mx-2  text-white font-semibold py-2 px-5 rounded-md text-sm shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300">
+                            Logout
+                        </button>
+                    </div>
                 </nav>
             </div>
 
@@ -264,6 +270,11 @@ export default {
             }
         };
 
+        // Fonction pour rediriger vers la page d'accueil
+        const redirectToHome = () => {
+            window.location.href = '/';
+        };
+
         // Fonction pour gérer la sélection de tous les animaux
         const isAllSelected = computed(() => selectedRows.value.length === tableRow.value.length);
 
@@ -296,6 +307,7 @@ export default {
             toggleSelectAll,
             isAllSelected,
             redirectToLogout,
+            redirectToHome,
         };
     },
 };

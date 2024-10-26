@@ -29,7 +29,7 @@ class AnimalFactory extends Factory
             'description' => $this->faker->sentence(), // Description fictive
             'status' => $this->faker->randomElement(['disponible', 'réservé', 'vendu']), // Statut aléatoire
             'price' => $this->faker->randomFloat(2, 50, 1000), // Prix aléatoire entre 50 et 1000
-            'images' => [], // URL d'image fictive
+            'images' => [], // Array vide pour les images
         ];
     }
 }

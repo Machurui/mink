@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     // Route pour créer un animal
     Route::post('/animals', [AnimalController::class, 'create'])->name('animals.create');
 
-    // Route pour mettre à jour un animal
+    // Route pour mettre à jour un animal (post au lieu de patch -> erreur incompréhensible)
     Route::post('/animals/{animal}/update', [AnimalController::class, 'update'])->name('animals.update');
 
     // Route pour supprimer un animal
