@@ -165,7 +165,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { PhotoIcon } from '@heroicons/vue/24/outline';
 import axios from 'axios';
-import Modal from './Modal.vue';
+import Modal from '../components/Modal.vue';
 
 export default {
     components: {
