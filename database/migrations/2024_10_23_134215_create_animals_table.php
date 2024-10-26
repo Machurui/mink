@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->id(); // ID unique pour chaque animal
             $table->string('name'); // Nom de l'animal
-            $table->integer('age')->nullable(); // Âge de l'animal (peut être nul si inconnu)
+            $table->integer('age'); // Âge de l'animal (peut être nul si inconnu)
             $table->string('species'); // Espèce de l'animal (ex : chien, chat)
             $table->string('breed'); // Espèce de l'animal (ex : chien, chat)
-            $table->text('description')->nullable(); // Description de l'animal
-            $table->string('status')->default('available'); // Statut de l'animal (disponible, réservé, vendu)
-            $table->float('price')->nullable(); // Prix de l'animal HT
-            $table->text('images')->nullable(); // Chemin de l'image de l'animal
+            $table->text('description'); // Description de l'animal
+            $table->string('status')->default('disponible'); // Statut de l'animal (disponible, réservé, vendu)
+            $table->float('price'); // Prix de l'animal HT
+            $table->text('images'); // Chemin de l'image de l'animal
             $table->timestamps(); // Colonnes created_at et updated_at
         });
     }

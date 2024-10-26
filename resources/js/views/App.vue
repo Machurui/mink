@@ -169,6 +169,7 @@
 <script>
 import { ref, computed, onMounted } from 'vue';
 import { ChevronDownIcon, MagnifyingGlassIcon, PhotoIcon, ShoppingCartIcon } from '@heroicons/vue/24/outline';
+import axios from 'axios';
 
 export default {
     components: {
@@ -196,12 +197,15 @@ export default {
         };
 
         // Fonction pour récupérer les animaux depuis l'API
-
-        // PASSER AVEC AXIOS
         const fetchAnimals = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/animals?available_only=true');
-                const data = await response.json();
+                const response = await axios.get('http://127.0.0.1:8000/animals', {
+                    params: {
+                        available_only: true,
+                    }
+                });
+
+                const data = response.data;
 
                 const speciesSet = new Set();
                 tableRow.value = data.map(animal => {

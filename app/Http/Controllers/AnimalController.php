@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class AnimalController extends Controller
 {
     /**
-     *
+     * Récupère la liste des animaux
      */
     public function read(Request $request)
     {
@@ -28,7 +28,7 @@ class AnimalController extends Controller
     }
 
     /**
-     *
+     * Crée un nouvel animal
      */
     public function create(Request $request)
     {
@@ -77,7 +77,7 @@ class AnimalController extends Controller
     }
 
     /**
-     * A REVOIR
+     * Met à jour un animal
      */
     public function update(Request $request, $id)
     {
@@ -159,7 +159,7 @@ class AnimalController extends Controller
     }
 
     /**
-     *
+     * Supprime un animal
      */
     public function delete($id)
     {

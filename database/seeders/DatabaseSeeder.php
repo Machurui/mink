@@ -15,13 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::create([
-        //     'name' => 'Admin',
-        //     'email' => 'admin@example.com',
-        //     'password' => Hash::make('Azerty2024'), // Hasher le mot de passe
-        // ]);
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('Azerty2024'), // Hasher le mot de passe
+        ]);
 
         // Fonctionnalité de test pour générer 50 animaux
         Animal::factory()->count(50)->create();

@@ -27,6 +27,7 @@ class AuthController extends Controller
         // Tentative de connexion avec les informations fournies
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
+
             return response()->json(['message' => 'Login successful'], 200);
         }
 

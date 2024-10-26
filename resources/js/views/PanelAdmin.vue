@@ -11,10 +11,16 @@
                             Liste des animaux disponibles
                         </small>
                     </div>
-                    <button @click="redirectToLogout"
-                        class="bg-gradient-to-tr from-gray-900 to-gray-800 text-white font-semibold py-2 px-5 rounded-md text-sm shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300">
-                        Logout
-                    </button>
+                    <div>
+                        <button @click="redirectToHome"
+                            class="bg-gradient-to-tr from-gray-900 to-gray-800 mx-2 text-white font-semibold py-2 px-5 rounded-md text-sm shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300">
+                            Accueil
+                        </button>
+                        <button @click="redirectToLogout"
+                            class="bg-gradient-to-tr from-gray-900 to-gray-800 mx-2  text-white font-semibold py-2 px-5 rounded-md text-sm shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300">
+                            Logout
+                        </button>
+                    </div>
                 </nav>
             </div>
 
@@ -159,7 +165,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { PhotoIcon } from '@heroicons/vue/24/outline';
 import axios from 'axios';
-import Modal from './Modal.vue';
+import Modal from '../components/Modal.vue';
 
 export default {
     components: {
@@ -249,9 +255,25 @@ export default {
         };
 
         // Fonction pour rediriger vers la page de déconnexion
+        const redirectToLogout = async () => {
+            try {
+                // Envoie une requête POST à l'API pour se déconnecter
+                const response = await axios.post('/logout');
 
-        // A FAIRE
-        const redirectToLogout = () => window.location.href = '/logout';
+                // Vérifie si la déconnexion est réussie
+                if (response.status === 200) {
+                    // Redirige vers la page de connexion si la déconnexion est réussie
+                    window.location.href = '/signin';
+                }
+            } catch (error) {
+                errorMessage.value = 'La déconnexion ne s\'est pas bien passé.Veuillez réessayer.';
+            }
+        };
+
+        // Fonction pour rediriger vers la page d'accueil
+        const redirectToHome = () => {
+            window.location.href = '/';
+        };
 
         // Fonction pour gérer la sélection de tous les animaux
         const isAllSelected = computed(() => selectedRows.value.length === tableRow.value.length);
@@ -285,6 +307,7 @@ export default {
             toggleSelectAll,
             isAllSelected,
             redirectToLogout,
+            redirectToHome,
         };
     },
 };

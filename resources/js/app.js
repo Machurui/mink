@@ -1,9 +1,9 @@
 import './bootstrap';
 import { createApp } from "vue";
 
-import App from "./components/App.vue";
-import SignIn from "./components/SignIn.vue";
-import PanelAdmin from './components/PanelAdmin.vue';
+import App from "./views/App.vue";
+import SignIn from "./views/SignIn.vue";
+import PanelAdmin from './views/PanelAdmin.vue';
 
 const app = createApp({});
 
