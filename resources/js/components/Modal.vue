@@ -7,7 +7,7 @@
                 <div class="relative flex flex-col bg-white">
                     <!-- Header du modal -->
                     <div
-                        class="sticky top-0 flex justify-center items-center h-16 sm:h-20 bg-slate-800 text-white rounded-t-md shadow-md">
+                        class="sticky top-0 flex justify-center items-center h-16 sm:h-20 bg-gradient-to-tr from-gray-900 to-gray-800 text-white rounded-t-md shadow-md">
                         <h3 class="text-lg sm:text-2xl">
                             {{ mode === 'create' ? 'Ajouter un Animal' : 'Modifier l\'Animal' }}
                         </h3>
