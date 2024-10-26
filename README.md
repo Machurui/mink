@@ -39,8 +39,6 @@ Version 1 d'un tableau de bord pour la présentation et la vente de bétail, ave
 3. **Configurer le fichier d’environnement**
 
    Dupliquez le fichier `.env.example` et renommez-le `.env`. 
-   
-   Mettez à jour les configurations nécessaires.
 
    Pour désactiver le mode débogage, changez la variable :
 
@@ -92,6 +90,8 @@ Version 1 d'un tableau de bord pour la présentation et la vente de bétail, ave
 ### Configuration de PHP
 
 Modifiez le fichier `php.ini` pour ajuster les paramètres suivants :
+
+Chemin du fichier `C:\Users\%USERPROFILE%\.config\herd-lite\bin`
 
    ```ini
    variables_order = "GPCS"
